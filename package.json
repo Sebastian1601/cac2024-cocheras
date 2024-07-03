@@ -1,0 +1,19 @@
+{
+  "name": "cac2024_cochera_node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec node app.js"
+  },
+  "keywords": [],
+  "author": "Grupo 20",
+  "license": "ISC",
+  "description": "Web de estacionamientos funcional en node",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

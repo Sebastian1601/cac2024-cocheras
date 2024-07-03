@@ -1,0 +1,115 @@
+main {
+    box-sizing:border-box;
+    width:100%;
+}
+
+#mapa__main {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+.mapa__container {
+    position: relative;
+    display: flex;
+    min-width: 90vw;
+    min-height: 90vh;
+    border-radius: 15px;
+}
+
+.listaEstacionamientos__main {
+    position: absolute;
+    top: 10vh;
+    left: 2vw;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 1em;
+    width: fit-content;
+    border: 1px solid #000;
+    border-radius: 15px;
+    z-index: 500;
+    background: linear-gradient(to left, rgb(121, 121, 121), rgb(36, 36, 36));
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 2px #ffffff;
+
+}
+
+.mapa__lista-titulo {
+    border-bottom: 2px double #fff;
+    margin-bottom: 1em;
+}
+
+#estaNombres {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 2px #ffffff;
+    cursor: pointer;
+}
+
+.leaflet-popup-content-wrapper {
+    margin:0;
+    padding:5px;
+    box-sizing:border-box;
+    border-radius:5px;
+    background:radial-gradient(at 50% 95%, #fff, #9e9e9e);
+    border:1px double #ff2727;
+}
+
+.popup-titulo {
+    width:100%;
+    text-align:center;
+    color:#000000;
+    padding:2px 0;
+    border-bottom:2px solid #be0000;
+    text-shadow:1px 1px 3px #4e4e4e;
+}
+
+.popup-dir {
+    width:100%;
+    text-align:center;
+    color:#313131;
+}
+
+.popup-lugares {
+    color:rgb(97, 1, 6);
+}
+
+
+@media only screen and (max-width: 640px) {
+    .listaEstacionamientos__main {
+        box-sizing:border-box;
+        position: relative;
+        width: 100%;
+        height: 20vh;
+        top: 0;
+        left: 0;
+        overflow-y:auto;
+        overflow-x:hidden;
+        border-radius:0;
+        border:2px solid #161616;
+    }
+    .mapa__container {
+        position:relative;
+        width:100%;
+        flex-flow:column nowrap;
+        padding:0;
+    }
+    #mapa_main {
+        box-sizing:border-box;
+        position:relative;
+        margin:0px;
+        height:60vh;
+        width:100%;
+
+    }
+    main {
+        width:100%;
+        padding:0;
+        /* overflow:hidden; */
+    }
+}
