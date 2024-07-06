@@ -31,70 +31,67 @@
         <ul class="nav__ul">
             <li><a href="index.html" class="nav__link" id="nav-home"><i class="fa-solid fa-house"></i>Inicio</a></li>
             <li><a href="login.html" class="nav__link" id="nav-login"><i class="fa-solid fa-user"></i>Log in</a></li>
-            <li><a href="registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a></li>
+            <li><a href="registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a>
+            </li>
             <li><a href="mapa.html" class="nav__link" id="nav-map"><i class="fa-solid fa-handshake"></i>Mapa</a></li>
-            <li><a href="index.html#aboutus" class="nav__link" id="nav-about"><i class="fa-solid fa-users-viewfinder"></i>Nosotros</a></li>
-            <li><a href="index.html#contacto" class="nav__link" id="nav-contact"><i class="fa-solid fa-at"></i>Contacto</a></li>
-            <li><a href="estacionamiento.html" class="nav__link" id="nav-search"><i class="fa-solid fa-search-location"></i>Buscar Estacionamiento</a></li>
+            <li><a href="index.html#aboutus" class="nav__link" id="nav-about"><i
+                        class="fa-solid fa-users-viewfinder"></i>Nosotros</a></li>
+            <li><a href="index.html#contacto" class="nav__link" id="nav-contact"><i
+                        class="fa-solid fa-at"></i>Contacto</a></li>
+            <li><a href="estacionamiento.html" class="nav__link" id="nav-search"><i
+                        class="fa-solid fa-search-location"></i>Buscar Estacionamiento</a></li>
         </ul>
     </nav>
 
 
     <main>
-        <div class="form__container">
-            <div class="usuario__form">
-                <form action="" id="formulario" onsubmit="return prevenirCarga(event)">
-                    <h1>Login de usuario</h1>
-                    <div class="form__input">
-                        <div class="form__input-box">
-                            <input type="email" name="varEmail" placeholder="Mail registrado" required>
-                            <i class='bx bxs-user-circle'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="password" name="varPassword" placeholder="Contraseña" required>
-                            <i class='bx bx-lock'></i>
-                        </div>
-                    </div>
-                    <div class="form__olvidar">
-                        <label for="recordar"><input type="checkbox" id="recordar">Recordar mis datos</label>
-                        <a href="#">Olvide mi contraseña</a>
-                    </div>
-                    <button type="submit" class="btn__enviar">Acceder</button>
-                    <div class="form__registro">
-                        <p>No tienes una cuenta, <a href="registro.html">regístrate</a></p>
-                    </div>
 
 
+        <form id="formulario">
+            <h1>Login</h1>
+            <div class="form__input">
 
-                </form>
+                <div class="form__input-box">
+
+                    <label for="usuario" class="input_label">
+                        <input type="text" name="usuario" id="usuario" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-car'></i>
+                        <span class="input_text">Ingresar email</span>
+                    </label>
+
+                </div>
+
+                <div class="form__input-box">
+
+                    <label for="password" class="input_label">
+                        <input type="password" name="password" id="password" placeholder=" " class="form_input"
+                            required>
+                        <i class='bx bx-lock'></i>
+                        <span class="input_text">Ingresar password</span>
+                    </label>
+
+                </div>
+
+                <div class="form__olvidar">
+
+                    <label for="recordar"><input type="checkbox" id="recordar">Recordar mis datos</label>
+                    <a href="#">Olvide mi contraseña</a>
+
+                </div>
+
+                <button type="submit" class="btn__enviar">Acceder</button>
+
+                <div class="form__registro">
+                    <p>No tienes una cuenta, <a href="registro.html">regístrate</a></p>
+                </div>
             </div>
-            <div class="dueno__form">
-                <form action="" id="formularioPres" method="POST">
-                    <h1>Login de Prestador</h1>
-                    <div class="form__input">
-                        <div class="form__input-box">
-                            <input type="text" name="varEmail" placeholder="mail registrado" required>
-                            <i class='bx bxs-user-circle'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="password" name="varPassword" placeholder="contraseña" required>
-                            <i class='bx bx-lock'></i>
-                        </div>
-                    </div>
-                    <div class="form__olvidar">
-                        <label for="recordar"><input type="checkbox" id="recordar">Recordar mis datos</label>
-                        <a href="#">Olvide mi contraseña T_T</a>
-                    </div>
-                    <button type="submit" class="btn__enviar">Acceder</button>
-                    <div class="form__registro">
-                        <p>No tienes una cuenta, <a href="#">regístrate</a></p>
-                    </div>
-                </form>
-
-            </div>
+        </form>
 
         </div>
     </main>
+    <footer>
+       <p> Designed by CaC HomeWorks 2024 &REG; </p>
+    </footer>
     <script src="/public/JS/login.js" type="module"></script>
     <script src="/public/JS/index.js"></script>
 

@@ -3,135 +3,136 @@
 
 * {
     font-family: "Lato", sans-serif;
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 
-
-body main{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height: 100vh;
-    background:url(../Media/img/img_login.jpg) no-repeat;
-    background-size:contain;
-    background-position:0 50px;
-    background-color:#000;
+body {
+    min-height: 100vh;/* Esto determina que el body se extienda si el contenido de la pagina se extiende*/
+    background:#000;
+    max-width:100vw;
 }
 
-.form__container {
-    width:500px;
-    background-color:transparent;
-    color:#fff;
-    border:1px solid #fff;
-    border-radius:25px;
-    padding:2.5em;
-    backdrop-filter:blur(5px);
-    height: auto;
-    box-shadow:0 0 5px #ffffff62;
-}
-
-form > h1 {
-    font-size:40px;
-    text-align:center;
-}
-
-.form__container .form__input-box {
+body main {
     position:relative;
-    width:100%;
-    height:3em;
-    background-color:transparent;
-    margin:1em 0;
-    border:1px solid #fff;
+    height:inherit;
+    background: url(../Media/img/img_login.jpg) no-repeat;
+    background-size: cover;
+    background-position: 0 50px;
+    background-color: #000;
 }
 
-.form__input-box input {
-    width:100%;
-    height:100%;
-    background:transparent;
-    border:none;
-    outline:none;
-    color:#fff;
-    font-size:1.4em;
-    padding:.5em 3em .5em .5em;
-    text-align:center;
+#formulario {
+    position:relative;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    background: transparent;
 }
 
-.form__input-box input::placeholder {
-    color:#eee;
+#formulario h1 {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: #fff
 }
 
-.form__input-box i {
+.form__input {
+    display: flex;
+    margin: 0 auto;
+    max-width: 75%;
+    min-width:550px;
+    flex-flow: column nowrap;
+    padding:1rem 5rem;
+    border:2px solid #fff;
+    border-radius:10px;
+    backdrop-filter: blur(5px);
+}
+
+#formulario .form__input .input_label :not([type="checkbox"], i) {
+    width: 100%;
+    height:50px;
+    outline: none;
+    border: none;
+    padding: 0.7rem;
+    border-radius:5px;
+}
+
+.form__input-box {
+    position: relative;
+    padding:.5rem;
+}
+
+.form__input-box .bx {
+    position: absolute;
+    display: inline-block;
+    top: 1rem;
+    right: 1.5rem;
+    color: rgb(83, 83, 83);
+    font-size: 30px;
+}
+
+.input_label {
+    position:relative;
+}
+
+.input_text {
     position:absolute;
-    right:15px;
-    top:20%;
-    font-size:2em;
+    display:inline;
+    z-index:100;
+    top:0;
+    font-size:1.2rem;
+    width:fit-content;
+    align-items:center;
+    color:rgb(114, 114, 114);
+    transform-origin: left center;
+    transition:all .5s linear;
 }
 
-/*estilos del recordar mis datos */
-
-.form__container .form__olvidar {
-    display:flex;
-    justify-content:space-between;
-    font-size:1.2em;
-    margin:1em 0;
+[type="submit"] {
+    display:block;
+    margin:2rem auto;
+    width:30rem;
+    height:3rem;
 }
 
-.form__olvidar label input {
-    accent-color: #fff;
-    color: #fff;
-    margin-right:.5em;
+
+/* evitar que la parte de datos de garage aparezcan al cargar la página*/
+
+#campos__duenoGarage {
+    overflow:hidden;
+    height:0;
+    transition:all .5s linear;
 }
 
-.form__olvidar a{
+/* funcionamiento de los inputs*/
+
+.form_input:focus ~ .input_text, .form_input:not(:placeholder-shown) ~ .input_text {
+    transform:translateY(-50%) scale(.8);
+    color:#ffffff;
+    text-shadow:1px 1px 2px #000, -1px -1px 2px #000;
+}
+
+#checkbox {
     color:#fff;
-    text-decoration:none;
-    transition:all .3s ease-in;
 }
 
-.form__olvidar label{
-    color: rgb(86, 128, 219);
-    font-weight: 900;
-}
+/*-------funcionamiento del checkbox----------------*/
 
-.form__olvidar a:hover {
-    text-decoration:underline;
-    text-shadow:0 0 10px gold;
-}
-
-.form__container .btn__enviar {
-    width:100%;
-    height:3em;
-    background-color:#fff;
-    border:none;
-    outline:none;
-    color:#022;
-    font-weight:600;
-    font-size:1.5em;
-}
-
-.form__registro {
-    font-size:1.3em;
-    text-align:center;
-    margin-top:.5em;
-}
-
-.form__registro p a {
-    color:#fff;
-    font-weight:600;
-    text-decoration:none;
-    transition:all .3s linear;
-}
-
-.form__registro p a:hover {
-    text-decoration:underline;
-    text-shadow:0 0 10px gold;
-
+#checkbox:has(input:checked) + #campos__duenoGarage {
+    display:block;
+    height:250px;
 }
 
 
-.dueno__form {
-    display:none;
+/*------------------- footer ----------------------*/
+
+footer {
+    position:relative;
+    display:block;
+    height:200px;
+    background:linear-gradient(0deg, rgba(0,0,0,1),rgba(0, 0, 0, 0));
+    color:#ffffff;
+    clear:both;
 }

@@ -30,69 +30,135 @@
         <ul class="nav__ul">
             <li><a href="./index.html" class="nav__link" id="nav-home"><i class="fa-solid fa-house"></i>Inicio</a></li>
             <li><a href="./login.html" class="nav__link" id="nav-login"><i class="fa-solid fa-user"></i>Log in</a></li>
-            <li><a href="registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a></li>
+            <li><a href="registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a>
+            </li>
             <li><a href="./mapa.html" class="nav__link" id="nav-map"><i class="fa-solid fa-handshake"></i>Mapa</a></li>
-            <li><a href="index.html#aboutus" class="nav__link" id="nav-about"><i class="fa-solid fa-users-viewfinder"></i>Nosotros</a></li>
-            <li><a href="index.html#contacto" class="nav__link" id="nav-contact"><i class="fa-solid fa-at"></i>Contacto</a></li>
-            <li><a href="estacionamiento.html" class="nav__link" id="nav-search"><i class="fa-solid fa-search-location"></i>Buscar Estacionamiento</a></li>
+            <li><a href="index.html#aboutus" class="nav__link" id="nav-about"><i
+                        class="fa-solid fa-users-viewfinder"></i>Nosotros</a></li>
+            <li><a href="index.html#contacto" class="nav__link" id="nav-contact"><i
+                        class="fa-solid fa-at"></i>Contacto</a></li>
+            <li><a href="estacionamiento.html" class="nav__link" id="nav-search"><i
+                        class="fa-solid fa-search-location"></i>Buscar Estacionamiento</a></li>
         </ul>
     </nav>
 
 
     <main>
-        <div class="form__container">
-            <div class="registro_form">
-                <form action="" id="formulario" onsubmit="return prevenirCarga(event)">
-                    <h1>Formulario de registro</h1>
-                    <div class="form__input">
-                        <div class="form__input-box">
-                            <input type="text" name="firstName" placeholder="Nombre" required>
-                            <i class='bx bxs-user-circle'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="text" name="lastName" placeholder="Apellido" required>
-                            <i class='bx bxs-user-circle'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="email" name="email" placeholder="Correo Electrónico" required>
-                            <i class='bx bxs-envelope'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="tel" name="phone" placeholder="Número de Teléfono" required>
-                            <i class='bx bxs-phone'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="password" name="password" placeholder="Contraseña" required>
-                            <i class='bx bx-lock'></i>
-                        </div>
-                        <div class="form__input-box">
-                            <input type="password" name="confirmPassword" placeholder="Confirmar Contraseña" required>
-                            <i class='bx bx-lock'></i>
-                        </div>
-                        <div class="form__olvidar">
-                            <input type="checkbox" id="garageOwner" name="garageOwner">
-                            <label for="garageOwner">Registrarse como dueño de un garage</label>
-                        </div>
-                        <div id="garageOwnerFields" style="display: none;">
-                            <div class="form__input-box">
-                                <input type="text" name="garageName" placeholder="Nombre del Garage">
-                                <i class='bx bxs-building-house'></i>
-                            </div>
-                            <div class="form__input-box">
-                                <input type="text" name="garageAddress" placeholder="Dirección del Garage">
-                                <i class='bx bxs-map'></i>
-                            </div>
-                            <div class="form__input-box">
-                                <input type="number" name="garageCapacity" placeholder="Capacidad del Garage">
-                                <i class='bx bxs-car'></i>
-                            </div>
-                        </div>
+
+        <form action="" id="formulario">
+
+            <h1>Registro de usuario</h1>
+
+            <div class="form__input">
+
+                <div class="form__input-box">
+                    <label for="nombre" class="input_label">
+                        <input type="text" name="nombre" id="nombre" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-user-circle'></i>
+                        <span class="input_text">Ingrese su nombre</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="apellido" class="input_label">
+                        <input type="text" name="apellido" id="apellido" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-user-circle'></i>
+                        <span class="input_text">Ingrese su apellido</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="email" class="input_label">
+                        <input type="email" name="email" id="email" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-envelope'></i>
+                        <span class="input_text">Ingrese su correo electrónico</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="telefono" class="input_label">
+                        <input type="tel" name="telefono" id="telefono" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-phone'></i>
+                        <span class="input_text">Ingrese su teléfono</span>
+                    </label>
+                </div>
+                <div class="form__input-box">
+                    <label for="dni" class="input_label">
+                        <input type="text" name="dni" id="dni" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-id-card' ></i>
+                        <span class="input_text">Ingrese su nro de documento</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="registro" class="input_label">
+                        <input type="text" name="registro" id="registro" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-car'></i>
+                        <span class="input_text">Ingrese su nro de registro de conductor</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="direccion" class="input_label">
+                        <input type="text" name="direccion" id="direccion" placeholder=" " class="form_input" required>
+                        <i class='bx bxs-building-house' ></i>
+                        <span class="input_text">Ingrese su direccion</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="password" class="input_label">
+                        <input type="password" name="password" id="password" placeholder=" " class="form_input" required>
+                         <i class='bx bx-lock'></i>
+                        <span class="input_text">Ingrese su contraseña</span>
+                    </label>
+                </div>
+
+                <div class="form__input-box">
+                    <label for="confirmarPassword" class="input_label">
+                    <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder=" " class="form_input" required>
+                    <i class='bx bx-lock'></i>
+                    <span class="input_text">Confirme su contraseña</span>
+                </label>
+                </div>
+
+                <label id="checkbox" for="propietarioGarage">Registrarse como dueño de un garage<input type="checkbox"
+                id="propietarioGarage" name="nombrePropietario"></label>
+                
+                <div id="campos__duenoGarage">
+
+                    <div class="form__input-box">
+                        <label for="nombreGarage" class="input_label">
+                        <input type="text" name="nombreGarage" id="nombreGarage" placeholder=" " class="form_input" >
+                        <i class='bx bxs-building-house'></i>
+                        <span class="input_text">Ingrese nombre del negocio / garage</span>
+                    </label>
                     </div>
-                    <button type="submit" class="btn__enviar">Registrarse</button>
-                </form>
+                        
+                    <div class="form__input-box">
+                        <label for="direccionGarage" class="input_label">
+                        <input type="text" name="direccionGarage" id="direccionGarage" placeholder=" " class="form_input" >
+                        <i class='bx bxs-building-house'></i>
+                        <span class="input_text">Ingrese direccion del negocio / garage</span>
+                    </label>
+                    </div>
+                        
+                    <div class="form__input-box">
+                        <label for="capacidadGarage" class="input_label">
+                        <input type="text" name="capacidadGarage" id="capacidadGarage" placeholder=" " class="form_input" >
+                        <i class='bx bxs-car'></i>
+                        <span class="input_text">Ingrese capacidad(plazas) del negocio / garage</span>
+                    </label>
+                    </div>
+                </div>
             </div>
-        </div>
+            <button type="submit" class="btn__enviar">Registrarse</button>
+        </form>
+
     </main>
+    <footer>
+        design by CaC HomeWorks 2024 &REG;
+    </footer>
     <script src="/public/js/login.js">
     </script>
     <script src="/public/JS/index.js"></script>
