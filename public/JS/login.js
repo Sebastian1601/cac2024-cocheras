@@ -37,6 +37,7 @@ function prevenirCarga(e) {
             }).then((res)=>{
                 console.log(res);
             })
+            miForm.reset();
     } catch (err) {
         return err
     }
