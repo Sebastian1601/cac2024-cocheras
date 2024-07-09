@@ -10,5 +10,8 @@ const connection =  mysql.createConnection({
     port:config.DBPORT
 });
 
+connection.addListener('error', (err)=>{
+    console.log(err);
+});
 
 module.exports = { connection };

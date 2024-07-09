@@ -25,7 +25,7 @@ function prevenirCarga(e) {
     };
 
     try {
-        fetch("/registerUser", headers)
+        fetch("http://localhost:3000/api/nuevoUsuario", headers)
             .then((res) => {
                 if (res.ok) {
                     console.log('codigo de status: ',res.status);
@@ -35,7 +35,7 @@ function prevenirCarga(e) {
                     throw "error, no se logró conectar al servidor"
                 }
             }).then((res)=>{
-                console.log(res);
+                console.log('respuesta desde el back: ', res);
             })
             miForm.reset();
     } catch (err) {

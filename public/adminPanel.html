@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacion.AR .:':. Panel de administrador</title>
+    <link rel="stylesheet" href="/public/CSS/adminPanel.css">
+    <script src="/public/JS/adminPanel.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__flex-item">
+                <h1>ESTACION.AR</h1>
+                <h2>Panel de administrador</h2>
+            </div>
+            <div class="header__flex-item">
+                <p>
+                    <span>Usuario activo:</span>
+                    <span id="usuarioActivo">unknown</span>
+                </p>
+                <p>
+                    <span>Permisos:</span>
+                    <span id="permisos">unknown</span>
+                </p>
+            </div>
+
+            <div class="header__flex-item">
+                <img src="" alt="avatar-usuario" class="img__avatar-usuario">
+                <button class="config__text">Configuracion
+                    <ul class="config__list">
+                    <li class="config__menu-item">Datos de cliente</li>
+                    <li class="config__menu-item">Permisos</li>
+                    <li class="config__menu-item">Log out</li>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section is="contenedor_botones">
+            <button class="btn_cargarClientes">Cargar Lista de Usuarios</button>
+        </section>
+        <section id="contenedor__resultados">
+            <div class="tabla__resultados">
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
