@@ -12,10 +12,6 @@ const { router } = require(path.join(__dirname, 'rutas', 'routes.js'));
 const config = require(path.join(__dirname, 'config', 'config.js'))
 const PORT = config.PORT;
 
-//conexion a la base(innecesaria en este lugar)
-const database = require(path.join(__dirname, 'database', 'database.js'));
-database.connection;
-
 
 
 //inicializo express
