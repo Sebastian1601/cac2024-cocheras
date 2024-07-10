@@ -1,0 +1,76 @@
+DATOS PARA CREAR LA TABLA---------------------------------------
+
+create database parking_cac;
+
+use parking_cac;
+
+create table propietarios (
+	idPropietario 	INT NOT NULL auto_increment,
+	nombre 		varchar(50) not null,
+	apellido 	varchar(50) not null,
+	dni 		int not null unique,
+	domicilio 	varchar(60) not null, 
+	nroTelefono 	int not null,
+	creado 		timestamp not null default (now()),
+			primary Key(idPropietario));
+
+create table estacionamientos (
+	idEstacionamiento 	int not null auto_increment,
+	razonSocial 		varchar(50) not null,
+	idPropietario 		int not null,
+	direccion 		varchar(60) not null,
+	cantidadPlazas 		int not null, 
+	GeoDirLat 		int not null,
+	GeoDirLong 		int not null, 
+	creado 			timestamp not null default (now()),
+				primary key(idEstacionamiento));
+
+
+create table vehiculos (
+	patente 	varchar(10) not null unique,
+	idConductor 	int not null unique,
+	marca 		varchar(20) not null,
+	modelo 		varchar(20),
+	nroCedulaVerde 	varchar(20) not null unique,
+	idEstacionamiento int not null,
+			foreign key(idEstacionamiento) references estacionamientos			(idEstacionamiento),
+			foreign key(idConductor) references clientes(idConductor)
+);
+
+
+create table clientes (
+	idConductor 	int auto_increment,
+	email 		varchar(50) not null,
+	passkey 	varchar(64) not null,
+	creado 		timestamp not null default (now()),
+			primary key(idConductor)
+);
+
+create table datosClientes (
+	idConductor 	int unique not null,
+	nombre 		varchar(50) not null,
+	apellido	varchar(50) not null,
+	dni 		int unique not null,
+	nroRegistroConductor 	varchar(20) not null unique,
+	direccion 	varchar(60) not null,
+	nroTelefono 	int,
+	creado 		timestamp not null default (now()),
+			primary key(dni)
+);
+
+create table admindatos (
+idUsuario int auto_increment,
+email varchar(50) not null,
+clave varchar(64) not null, 
+creado timestamp not null default (now()),
+primary key(idUsuario)
+);
+
+
+use parking_cac;
+
+select * from clientes, datosclientes;
+SET SQL_SAFE_UPDATES=0;
+delete from clientes;
+delete from datosclientes;
+alter table clientes auto_increment=1;
