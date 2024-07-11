@@ -222,7 +222,7 @@ header {
 
 /*---------------- botones de edicion borrado ----------------- */
 
-.btn_editar {
+.btn_editarUsuario {
     outline:none;
     border:1px solid #6341ff;
     border-radius:5px;
@@ -232,7 +232,7 @@ header {
 
 }
 
-.btn_borrar {
+.btn_borrarUsuario {
     display:inline-block;
     margin:10px auto;
     outline:none;

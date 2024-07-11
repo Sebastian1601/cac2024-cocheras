@@ -91,6 +91,7 @@ function crearUsuario(req, res) {
 
 /*------------------------------------------------------------------------------------------------------------------*/
 function consultaUser(req, res) {
+    console.log('iniciando back');
     const dni = [];
     dni.push(req.params.dni);
 
@@ -115,6 +116,28 @@ function consultaUser(req, res) {
         })
 };
 
+function editarUsuario(req, res) {
+    const data = req.body;
+    console.log(data);
+    let datos = [];
+    const sql = 'UPDATE `parking_cac`.`datosclientes` SET `nombre` = ?, `apellido` = ?, `dni` = ?, `nroRegistroConductor` = ?, `direccion` = ?, `nroTelefono` = ? WHERE `dni` = ?;';
+    for (i in data) {
+        datos.push(data[i]);
+    };
+    datos.push(req.params.dni);
+    insertarCliente(sql, datos)
+    .then((resultados)=>{
+        const results = resultados;
+        console.log(results);
+        console.log('datos actualizados con éxito');
+        res.status(200).send({status:'Success', message:'Los datos han sido modificados con éxito'});
+    })
+    .catch((e)=>{
+        res.status(400).send({status:'error', message:'Se produjo un error al actualizar los datos'});
+    });
+
+};
+
 
 
 
@@ -123,6 +146,8 @@ function eliminarUsuario() {
 
 
 };
+
+
 
 
 
@@ -156,5 +181,6 @@ module.exports = {
     consultaUsuarios,
     crearUsuario,
     loginUsuario,
-    consultaUser
+    consultaUser,
+    editarUsuario
 }

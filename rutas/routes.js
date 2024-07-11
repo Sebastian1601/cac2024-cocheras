@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('node:path');
-const { crearUsuario, consultaUsuarios, loginUsuario, consultaUser } = require('../database/userController.js');
+const { crearUsuario, consultaUsuarios, loginUsuario, consultaUser , editarUsuario} = require('../database/userController.js');
 
 
 //creo la ruta base a public.
@@ -63,7 +63,10 @@ router.get('/api/consultarUsuarios', consultaUsuarios);
 //ruta para el login
 router.post('/api/login', loginUsuario);
 
+//ruta para consultar un unico usuario
 router.get('/api/consultarUser/:dni', consultaUser);
 
+//ruta para modificar usuario
+router.put('/api/editarUsuario/:dni', editarUsuario)
 
 module.exports = { router };
