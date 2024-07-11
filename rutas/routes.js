@@ -3,13 +3,14 @@
 const express = require('express');
 const router = express.Router();
 const path = require('node:path');
-const { crearUsuario, consultaUsuarios } = require('../database/userController.js');
+const { crearUsuario, consultaUsuarios, loginUsuario } = require('../database/userController.js');
+
 
 //creo la ruta base a public.
 const rutaEstatica = path.join(__dirname, '..', 'public');
 
 
-//se crean las respuestas basicas a cada página html
+//se crean las respuestas basicas a cada página htmls
 const enviarIndex = (req, res) => {
     res.sendFile(path.join(rutaEstatica, 'index.html'))
 };
@@ -46,9 +47,9 @@ router.get('/estacionamiento.html', enviarEstacionamiento);
 
 router.get('/registro.html', enviarRegistro);
 
+
 //ruta para el panel de administrador
 router.get('/adminPanel.html', enviarAdminPanel);
-
 
 //peticiones post exclusivas de los formularios
 //guardar usuario mediante userController.js/crearUsuario()
@@ -56,6 +57,9 @@ router.post('/api/nuevoUsuario', crearUsuario);
 
 //solicitar lista de usuarios mediante userController.js/consultaUsuarios()
 router.get('/api/consultarUsuarios', consultaUsuarios)
+
+//ruta para el login
+router.post('/api/login', loginUsuario);
 
 
 module.exports = { router };

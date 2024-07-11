@@ -83,7 +83,7 @@ function crearUsuario(req, res) {
             res.status(201).send({ status: "Success", message: 'Se ha registrado el nuevo usuario correctamente', resultados: resultados });
         })
         .catch((e) => {
-            res.send({ status: 'Error', message: e});
+            res.send({ status: 'Error', message: e });
 
         })
 };
@@ -99,8 +99,34 @@ function eliminarUsuario() {
 
 };
 
+async function loginUsuario(req, res) {
+    const { usuario, password } = req.body;
+    if (!usuario || !password) {
+        res.status(400).send({ status: 'error', message: 'Hay datos incompletos en uno  o más campos' });
+    }
+    const sql = 'SELECT `idUsuario`, `email`, `clave` FROM `parking_cac`.`admindatos` WHERE `email` = ? ;';
+    const datos = [usuario];
+
+    const resultados = await insertarCliente(sql, datos);
+    if (resultados.length >= 1) {
+        const { clave } = resultados[0];
+        console.log(clave);
+        res.status(200).send({ status:'login success!', message:'Login exitoso, datos correctos'});
+    } else {
+        res.status(400).send({ status: 'login failed!', message: 'Los datos no coinciden' });
+    }
+
+};
+
+
+
+async function registrarAdmin(req, res) {
+
+};
+
 
 module.exports = {
     consultaUsuarios,
-    crearUsuario
+    crearUsuario,
+    loginUsuario
 }

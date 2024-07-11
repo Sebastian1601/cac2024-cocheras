@@ -21,6 +21,13 @@ const app = express();
 //configurar middleware carpetas de archivos estáticos
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+//evitar los errores cors(SOLO PARA DEPURAR)
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 //middleware para manejar json entrantes
 app.use(express.json());
 
