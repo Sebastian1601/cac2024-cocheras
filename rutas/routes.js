@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('node:path');
-const { crearUsuario, consultaUsuarios, loginUsuario } = require('../database/userController.js');
+const { crearUsuario, consultaUsuarios, loginUsuario, consultaUser } = require('../database/userController.js');
 
 
 //creo la ruta base a public.
@@ -36,7 +36,7 @@ const enviarAdminPanel = (req, res) => {
 };
 
 
-//las peticiones get ruteadas a cada pagina
+//las peticiones get se rutean a cada pagina
 router.get('/index.html', enviarIndex);
 
 router.get('/login.html', enviarLogin);
@@ -48,6 +48,8 @@ router.get('/estacionamiento.html', enviarEstacionamiento);
 router.get('/registro.html', enviarRegistro);
 
 
+
+
 //ruta para el panel de administrador
 router.get('/adminPanel.html', enviarAdminPanel);
 
@@ -56,10 +58,12 @@ router.get('/adminPanel.html', enviarAdminPanel);
 router.post('/api/nuevoUsuario', crearUsuario);
 
 //solicitar lista de usuarios mediante userController.js/consultaUsuarios()
-router.get('/api/consultarUsuarios', consultaUsuarios)
+router.get('/api/consultarUsuarios', consultaUsuarios);
 
 //ruta para el login
 router.post('/api/login', loginUsuario);
+
+router.get('/api/consultarUser/:dni', consultaUser);
 
 
 module.exports = { router };

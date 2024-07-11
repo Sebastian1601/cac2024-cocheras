@@ -31,9 +31,9 @@
                 <img src="" alt="avatar-usuario" class="img__avatar-usuario">
                 <button class="config__text">Configuracion
                     <ul class="config__list">
-                        <li class="config__menu-item">Datos de cliente</li>
+                        <li class="config__menu-item"><a href="/index.html">Volver al index</a></li>
                         <li class="config__menu-item">Permisos</li>
-                        <li class="config__menu-item">Log out</li>
+                        <li class="config__menu-item"><a href="/api/logout">Cerrar Sesion</a></li>
                 </button>
                 </p>
             </div>
@@ -43,17 +43,66 @@
         <div class="grid_container-getusers">
             <div class="aside grid-item">
                 <button class="aside__grid-button btn_cargarClientes">Cargar Clientes</button>
-                <button class="aside__grid-button">Buscar Clientes</button>
+                <button class="aside__grid-button btn_editarClientes">Editar Clientes</button>
                 <button class="aside__grid-button">Eliminar Clientes</button>
+                <button class="aside__grid-button">Cargar Admins</button>
                 <button class="aside__grid-button">Ingresar Estacionamientos</button>
             </div>
-            <div class="main_grid grid-item">
-                <section id="contenedor__resultados">
+            <div class="get_grid grid-item">
+                <div class="contenedor__resultados">
                     <h2>Cargar lista de clientes</h2>
                     <div class="tabla__resultados">
                     </div>
-                </section>
+                </div>
             </div>
+            <div class="edit_grid grid-item">
+                <h2>Editar clientes</h2>
+                <form class="form_editar">
+                    <div class="cuadro_busqueda">
+                        <label for="dni">Ingrese el número de documento del conductor a buscar:</label>
+                        <input type="text" id="dni">
+                        <br>
+                        <button class="btn_buscarCliente">BUSCAR Cliente</button>
+                    </div>
+                    <br>
+                    <hr>
+                    <hr>
+                    <div class="cuadro_resultados">
+                        <div class="cont_inputs">
+                            <label for="nombre">Nombre:         </label>
+                                <input type="text" id="nombre" value="">
+                   
+                            <label for="apellido">Apellido:   </label>
+                                <input type="text" id="apellido" value="">
+                         
+                        </div>
+                        <div class="cont_inputs">
+                            <label for="documento">Documento:</label>
+                            <input type="text" id="documento" value="">
+                        
+                            <label for="registroNro">Registro nro:      </label>
+                            <input type="text" id="registroNro" value="">
+                  
+                        </div>
+                        <div class="cont_inputs">
+                            <label for="direccion">Direccion:</label>
+                            <input type="text" id="direccion" value="">
+                        </div>
+                        <div class="cont_inputs">
+                            <label for="tel">Teléfono:</label>
+                            <input type="text" id="tel" value="">
+                            <label for="creado">Fecha de creado:</label>
+                            <input type="text" id="creado" value="">
+                        </div>
+                       
+                        <button class="btn_editar">Editar Usuario</button>
+                        <button class="btn_borrar">Borrar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
         </div>
     </main>
     <footer>

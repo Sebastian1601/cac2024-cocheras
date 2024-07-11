@@ -16,7 +16,7 @@ const connection = mysql.createConnection(configdb);
 //funcion para obtener datos de un usuario
 function consultaUsuarios(req, res) {
 
-    const sql = 'SELECT * FROM `clientes`';
+    const sql = 'SELECT * FROM `parking_cac`.`datosclientes`';
 
     //realizo el trabajo en la base
     const datos = connection.query(sql, (err, resultados) => {
@@ -90,14 +90,41 @@ function crearUsuario(req, res) {
 
 
 /*------------------------------------------------------------------------------------------------------------------*/
-function modificarUsuario() {
+function consultaUser(req, res) {
+    const dni = [];
+    dni.push(req.params.dni);
 
+    const sql = 'SELECT * FROM `parking_cac`.`datosclientes` WHERE `dni` = ? ;';
+
+    insertarCliente(sql, dni)
+        .then((results) => {
+            const usuario = results[0];
+
+            if (usuario != undefined) {
+
+                console.log(usuario);
+                res.status(200).send(usuario);
+            } else {
+                console.log(usuario)
+                res.status(400).send({ status: 'error', message: 'El usuario buscado no existe en la base de datos' });
+            }
+        })
+        .catch((e) => {
+            console.log(e)
+            res.status(400).send(e);
+        })
 };
+
+
+
+
 
 function eliminarUsuario() {
 
 
 };
+
+
 
 async function loginUsuario(req, res) {
     const { usuario, password } = req.body;
@@ -111,7 +138,7 @@ async function loginUsuario(req, res) {
     if (resultados.length >= 1) {
         const { clave } = resultados[0];
         console.log(clave);
-        res.status(200).send({ status:'login success!', message:'Login exitoso, datos correctos'});
+        res.status(200).send({ status: 'login success!', message: 'Login exitoso, datos correctos' });
     } else {
         res.status(400).send({ status: 'login failed!', message: 'Los datos no coinciden' });
     }
@@ -128,5 +155,6 @@ async function registrarAdmin(req, res) {
 module.exports = {
     consultaUsuarios,
     crearUsuario,
-    loginUsuario
+    loginUsuario,
+    consultaUser
 }
