@@ -124,7 +124,7 @@ async function registrarAdmin(req, res) {
 
 };
 
-
+//module exports
 module.exports = {
     consultaUsuarios,
     crearUsuario,
