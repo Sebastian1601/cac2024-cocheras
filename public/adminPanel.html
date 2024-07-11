@@ -31,22 +31,30 @@
                 <img src="" alt="avatar-usuario" class="img__avatar-usuario">
                 <button class="config__text">Configuracion
                     <ul class="config__list">
-                    <li class="config__menu-item">Datos de cliente</li>
-                    <li class="config__menu-item">Permisos</li>
-                    <li class="config__menu-item">Log out</li>
-                    </button>
+                        <li class="config__menu-item">Datos de cliente</li>
+                        <li class="config__menu-item">Permisos</li>
+                        <li class="config__menu-item">Log out</li>
+                </button>
                 </p>
             </div>
         </div>
     </header>
     <main>
-        <section is="contenedor_botones">
-            <button class="btn_cargarClientes">Cargar Lista de Usuarios</button>
-        </section>
-        <section id="contenedor__resultados">
-            <div class="tabla__resultados">
+        <div class="grid_container-getusers">
+            <div class="aside grid-item">
+                <button class="aside__grid-button btn_cargarClientes">Cargar Clientes</button>
+                <button class="aside__grid-button">Buscar Clientes</button>
+                <button class="aside__grid-button">Eliminar Clientes</button>
+                <button class="aside__grid-button">Ingresar Estacionamientos</button>
             </div>
-        </section>
+            <div class="main_grid grid-item">
+                <section id="contenedor__resultados">
+                    <h2>Cargar lista de clientes</h2>
+                    <div class="tabla__resultados">
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
     <footer>
 

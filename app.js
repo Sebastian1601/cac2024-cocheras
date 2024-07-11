@@ -12,10 +12,6 @@ const { router } = require(path.join(__dirname, 'rutas', 'routes.js'));
 const config = require(path.join(__dirname, 'config', 'config.js'))
 const PORT = config.PORT;
 
-//conexion a la base(innecesaria en este lugar)
-const database = require(path.join(__dirname, 'database', 'database.js'));
-database.connection;
-
 
 
 //inicializo express
@@ -24,6 +20,13 @@ const app = express();
 
 //configurar middleware carpetas de archivos estáticos
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+//evitar los errores cors(SOLO PARA DEPURAR)
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 //middleware para manejar json entrantes
 app.use(express.json());
