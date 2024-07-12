@@ -44,7 +44,7 @@ function prevenirCarga(e) {
 
 
     try {
-        fetch("http://localhost:3000/api/login", headers)
+        fetch("/api/login", headers)
             .then((res) => {
                 if (res.ok) {
                     console.log('codigo de status: ', res.status);

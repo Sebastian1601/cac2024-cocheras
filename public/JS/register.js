@@ -22,7 +22,7 @@ function prevenirCarga(e) {
     };
 
     try {
-        fetch("http://localhost:3000/api/nuevoUsuario", headers)
+        fetch("/api/nuevoUsuario", headers)
             .then((res) => {
                 if (res.ok) {
                     console.log('codigo de status: ', res.status);

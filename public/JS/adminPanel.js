@@ -1,5 +1,6 @@
 console.log('vinculado ok.')
 
+
 async function obtenerClientes() {
     document.querySelector('.form_editar').reset();
     document.querySelector('.get_grid.grid-item').style.display = 'block';
@@ -10,7 +11,7 @@ async function obtenerClientes() {
     if (contenedorGrid.children.length !== 0) {
         eliminarContenidoCargado(contenedorGrid);
     };
-    const jsondatos = await fetch('http://localhost:3000/api/consultarUsuarios');
+    const jsondatos = await fetch('/api/consultarUsuarios');
     const datos = await jsondatos.json();
 
     crearListadoHTML(datos);
@@ -74,7 +75,7 @@ btn_buscarCliente.addEventListener('click', (e) => {
     const dni = form[0].value;
     console.log('dni a buscar:', dni);
 
-    fetch('http://localhost:3000/api/consultarUser/' + dni)
+    fetch('/api/consultarUser/' + dni)
         .then(res => res.json())
         .then((res) => {
             console.log(res);
@@ -111,7 +112,7 @@ btn_editarUsuario.addEventListener('click', (e) => {
     console.log('dni a editar: ', datos.dni);
     console.log(datos);
 
-    fetch('http://localhost:3000/api/editarUsuario/' + datos.dni, {
+    fetch('/api/editarUsuario/' + datos.dni, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
