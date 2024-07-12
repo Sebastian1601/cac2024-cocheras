@@ -18,7 +18,7 @@ const connection = mysql.createConnection(configdb);
 //funcion para obtener datos de un usuario
 function consultaUsuarios(req, res) {
 
-    const sql = `SELECT * FROM ${database}.datosclientes`;
+    const sql = `SELECT * FROM ${database}.datosClientes`;
 
     //realizo el trabajo en la base
     const datos = connection.query(sql, (err, resultados) => {
@@ -54,7 +54,7 @@ function crearUsuario(req, res) {
     }
 
     //creo una sentencia para ver si hay datos duplicados en la base=>
-    const sqlDupli = `SELECT dni, nroRegistroConductor FROM ${database}.datosclientes WHERE dni = ? OR nroRegistroConductor = ? ;`;
+    const sqlDupli = `SELECT dni, nroRegistroConductor FROM ${database}.datosClientes WHERE dni = ? OR nroRegistroConductor = ? ;`;
     const datosDupli = [dni, registro];
 
     insertarCliente(sqlDupli, datosDupli)
@@ -75,7 +75,7 @@ function crearUsuario(req, res) {
         .then((resultados) => {
 
             const { insertId } = resultados;
-            const sqlDatosClientes = `INSERT INTO ${database}.datosclientes (idConductor, nombre, apellido, dni, nroRegistroConductor, direccion, nroTelefono) VALUES ( ?, ? , ? , ? , ? , ? , ?);`;
+            const sqlDatosClientes = `INSERT INTO ${database}.datosClientes (idConductor, nombre, apellido, dni, nroRegistroConductor, direccion, nroTelefono) VALUES ( ?, ? , ? , ? , ? , ? , ?);`;
             const datosClientesValues = [insertId, nombre, apellido, dni, registro, direccion, telefono];
             return insertarCliente(sqlDatosClientes, datosClientesValues)
         })
@@ -97,7 +97,7 @@ function consultaUser(req, res) {
     const dni = [];
     dni.push(req.params.dni);
 
-    const sql = `SELECT * FROM ${database}.datosclientes WHERE dni = ? ;`;
+    const sql = `SELECT * FROM ${database}.datosClientes WHERE dni = ? ;`;
 
     insertarCliente(sql, dni)
         .then((results) => {
@@ -122,7 +122,7 @@ function editarUsuario(req, res) {
     const data = req.body;
     console.log(data);
     let datos = [];
-    const sql = `UPDATE ${database}.datosclientes SET nombre = ?, apellido = ?, dni = ?, nroRegistroConductor = ?, direccion = ?, nroTelefono = ? WHERE dni = ?;`;
+    const sql = `UPDATE ${database}.datosClientes SET nombre = ?, apellido = ?, dni = ?, nroRegistroConductor = ?, direccion = ?, nroTelefono = ? WHERE dni = ?;`;
     for (i in data) {
         datos.push(data[i]);
     };
