@@ -37,7 +37,7 @@ const enviarAdminPanel = (req, res) => {
 
 
 //las peticiones get se rutean a cada pagina
-router.get('/index.html', enviarIndex);
+router.get('/', enviarIndex);
 
 router.get('/login.html', enviarLogin);
 
