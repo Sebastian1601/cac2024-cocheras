@@ -14,7 +14,7 @@ const { router } = require(path.join(__dirname, 'rutas', 'routes.js'));
 const config = require(path.join(__dirname, 'config', 'config.js'))
 const PORT = config.PORT;
 const HOST = config.HOST;
-
+console.log(PORT, HOST);
 
 //inicializo express
 const app = express();
