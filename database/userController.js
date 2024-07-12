@@ -7,8 +7,10 @@ const configdb = {
     user: config.DBUSER,
     password: config.DBPASS,
     database: config.DBNAME,
-    port: config.DBPORT
+    port:config.DBPORT
 };
+
+const database = config.DBNAME;
 
 const connection = mysql.createConnection(configdb);
 
@@ -52,7 +54,7 @@ function crearUsuario(req, res) {
     }
 
     //creo una sentencia para ver si hay datos duplicados en la base=>
-    const sqlDupli = 'SELECT `dni`, `nroRegistroConductor` FROM `parking_cac`.`datosclientes` WHERE `dni` = ? OR `nroRegistroConductor` = ? ;';
+    const sqlDupli = `SELECT dni, nroRegistroConductor FROM ${database}.datosclientes WHERE dni = ? OR nroRegistroConductor = ? ;`;
     const datosDupli = [dni, registro];
 
     insertarCliente(sqlDupli, datosDupli)
@@ -66,14 +68,14 @@ function crearUsuario(req, res) {
             const hashUserPassword = bcrypt.hashSync(password, salt);
 
             //genero la sentencia de inserción de datos en las tablas
-            const sqlClientes = 'INSERT INTO `parking_cac`.`clientes` (`email`, `passkey`) VALUES (?, ?);';
+            const sqlClientes = `INSERT INTO ${database}.clientes (email, passkey) VALUES (?, ?);`;
             const clientesValues = [email, hashUserPassword];
             return insertarCliente(sqlClientes, clientesValues)
         })
         .then((resultados) => {
 
             const { insertId } = resultados;
-            const sqlDatosClientes = 'INSERT INTO `parking_cac`.`datosclientes` (`idConductor`, `nombre`, `apellido`, `dni`, `nroRegistroConductor`, `direccion`, `nroTelefono`) VALUES ( ?, ? , ? , ? , ? , ? , ?);';
+            const sqlDatosClientes = `INSERT INTO ${database}.datosclientes (idConductor, nombre, apellido, dni, nroRegistroConductor, direccion, nroTelefono) VALUES ( ?, ? , ? , ? , ? , ? , ?);`;
             const datosClientesValues = [insertId, nombre, apellido, dni, registro, direccion, telefono];
             return insertarCliente(sqlDatosClientes, datosClientesValues)
         })
@@ -95,7 +97,7 @@ function consultaUser(req, res) {
     const dni = [];
     dni.push(req.params.dni);
 
-    const sql = 'SELECT * FROM `parking_cac`.`datosclientes` WHERE `dni` = ? ;';
+    const sql = `SELECT * FROM ${database}.datosclientes WHERE dni = ? ;`;
 
     insertarCliente(sql, dni)
         .then((results) => {
@@ -120,7 +122,7 @@ function editarUsuario(req, res) {
     const data = req.body;
     console.log(data);
     let datos = [];
-    const sql = 'UPDATE `parking_cac`.`datosclientes` SET `nombre` = ?, `apellido` = ?, `dni` = ?, `nroRegistroConductor` = ?, `direccion` = ?, `nroTelefono` = ? WHERE `dni` = ?;';
+    const sql = `UPDATE ${database}.datosclientes SET nombre = ?, apellido = ?, dni = ?, nroRegistroConductor = ?, direccion = ?, nroTelefono = ? WHERE dni = ?;`;
     for (i in data) {
         datos.push(data[i]);
     };
@@ -156,7 +158,7 @@ async function loginUsuario(req, res) {
     if (!usuario || !password) {
         res.status(400).send({ status: 'error', message: 'Hay datos incompletos en uno  o más campos' });
     }
-    const sql = 'SELECT `idUsuario`, `email`, `clave` FROM `parking_cac`.`admindatos` WHERE `email` = ? ;';
+    const sql = `SELECT idUsuario, email, clave FROM ${database}.admindatos WHERE 'email' = ? ;`;
     const datos = [usuario];
 
     const resultados = await insertarCliente(sql, datos);

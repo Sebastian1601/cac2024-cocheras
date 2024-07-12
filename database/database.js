@@ -21,4 +21,4 @@ connection.connect( (err) =>{
     console.log("Conectado a la base datos MySQL2 desde database.js");
 });
 
-module.exports = { connection };
+module.exports = { connection, configdb };
