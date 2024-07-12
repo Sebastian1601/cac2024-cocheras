@@ -18,7 +18,7 @@ const connection = mysql.createConnection(configdb);
 //funcion para obtener datos de un usuario
 function consultaUsuarios(req, res) {
 
-    const sql = 'SELECT * FROM `parking_cac`.`datosclientes`';
+    const sql = `SELECT * FROM ${database}.datosclientes`;
 
     //realizo el trabajo en la base
     const datos = connection.query(sql, (err, resultados) => {
