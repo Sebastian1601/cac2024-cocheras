@@ -1,4 +1,4 @@
-/* require('dotenv').config(); */
+require('dotenv').config();
 
 //solicito usar el modulo express instalado de npm
 const express = require('express');
@@ -35,6 +35,8 @@ app.use(express.json());
 
 //peticiones manejadas por router
 app.use('/', router);
+
+
 
 
 //server

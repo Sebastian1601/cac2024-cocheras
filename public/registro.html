@@ -28,16 +28,20 @@
     </div>
     <nav>
         <ul class="nav__ul">
-            <li><a href="./" class="nav__link" id="nav-home"><i class="fa-solid fa-house"></i>Inicio</a></li>
-            <li><a href="./login.html" class="nav__link" id="nav-login"><i class="fa-solid fa-user"></i>Log in</a></li>
-            <li><a href="registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a>
+            <li><a href="/" class="nav__link" id="nav-home"><i class="fa-solid fa-house"></i>Inicio</a></li>
+            <li><a href="/login.html" class="nav__link" id="nav-login"><i class="fa-solid fa-user"></i>Log in</a></li>
+            <li><a href="/registro.html" class="nav__link" id="nav-join"><i class="fa-solid fa-handshake"></i>Unirse</a>
             </li>
-            <li><a href="./mapa.html" class="nav__link" id="nav-map"><i class="fa-solid fa-handshake"></i>Mapa</a></li>
-            <li><a href="index.html#aboutus" class="nav__link" id="nav-about"><i
+
+            <li><a href="/mapa.html" class="nav__link" id="nav-map"><i class="fa-solid fa-handshake"></i>Mapa</a></li>
+
+            <li><a href="/#aboutus" class="nav__link" id="nav-about"><i
                         class="fa-solid fa-users-viewfinder"></i>Nosotros</a></li>
-            <li><a href="index.html#contacto" class="nav__link" id="nav-contact"><i
-                        class="fa-solid fa-at"></i>Contacto</a></li>
-            <li><a href="estacionamiento.html" class="nav__link" id="nav-search"><i
+
+
+            <li><a href="/#contacto" class="nav__link" id="nav-contact"><i class="fa-solid fa-at"></i>Contacto</a></li>
+
+            <li><a href="/estacionamiento.html" class="nav__link" id="nav-search"><i
                         class="fa-solid fa-search-location"></i>Buscar Estacionamiento</a></li>
         </ul>
     </nav>
@@ -85,7 +89,7 @@
                 <div class="form__input-box">
                     <label for="dni" class="input_label">
                         <input type="text" name="dni" id="dni" placeholder=" " class="form_input" required>
-                        <i class='bx bxs-id-card' ></i>
+                        <i class='bx bxs-id-card'></i>
                         <span class="input_text">Ingrese su nro de documento</span>
                     </label>
                 </div>
@@ -101,54 +105,58 @@
                 <div class="form__input-box">
                     <label for="direccion" class="input_label">
                         <input type="text" name="direccion" id="direccion" placeholder=" " class="form_input" required>
-                        <i class='bx bxs-building-house' ></i>
+                        <i class='bx bxs-building-house'></i>
                         <span class="input_text">Ingrese su direccion</span>
                     </label>
                 </div>
 
                 <div class="form__input-box">
                     <label for="password" class="input_label">
-                        <input type="password" name="password" id="password" placeholder=" " class="form_input" required>
-                         <i class='bx bx-lock'></i>
+                        <input type="password" name="password" id="password" placeholder=" " class="form_input"
+                            required>
+                        <i class='bx bx-lock'></i>
                         <span class="input_text">Ingrese su contraseña</span>
                     </label>
                 </div>
 
                 <div class="form__input-box">
                     <label for="confirmarPassword" class="input_label">
-                    <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder=" " class="form_input" required>
-                    <i class='bx bx-lock'></i>
-                    <span class="input_text">Confirme su contraseña</span>
-                </label>
+                        <input type="password" name="confirmarPassword" id="confirmarPassword" placeholder=" "
+                            class="form_input" required>
+                        <i class='bx bx-lock'></i>
+                        <span class="input_text">Confirme su contraseña</span>
+                    </label>
                 </div>
 
                 <label id="checkbox" for="propietarioGarage">Registrarse como dueño de un garage<input type="checkbox"
-                id="propietarioGarage" name="nombrePropietario"></label>
-                
+                        id="propietarioGarage" name="nombrePropietario"></label>
+
                 <div id="campos__duenoGarage">
 
                     <div class="form__input-box">
                         <label for="nombreGarage" class="input_label">
-                        <input type="text" name="nombreGarage" id="nombreGarage" placeholder=" " class="form_input" >
-                        <i class='bx bxs-building-house'></i>
-                        <span class="input_text">Ingrese nombre del negocio / garage</span>
-                    </label>
+                            <input type="text" name="nombreGarage" id="nombreGarage" placeholder=" " class="form_input">
+                            <i class='bx bxs-building-house'></i>
+                            <span class="input_text">Ingrese nombre del negocio / garage</span>
+                        </label>
                     </div>
-                        
+
                     <div class="form__input-box">
                         <label for="direccionGarage" class="input_label">
-                        <input type="text" name="direccionGarage" id="direccionGarage" placeholder=" " class="form_input" >
-                        <i class='bx bxs-building-house'></i>
-                        <span class="input_text">Ingrese direccion del negocio / garage</span>
-                    </label>
+                            <input type="text" name="direccionGarage" id="direccionGarage" placeholder=" "
+                                class="form_input">
+                            <i class='bx bxs-building-house'></i>
+                            <span class="input_text">Ingrese direccion del negocio / garage</span>
+                        </label>
                     </div>
-                        
+
                     <div class="form__input-box">
                         <label for="capacidadGarage" class="input_label">
-                        <input type="text" name="capacidadGarage" id="capacidadGarage" placeholder=" " class="form_input" >
-                        <i class='bx bxs-car'></i>
-                        <span class="input_text">Ingrese capacidad(plazas) del negocio / garage</span>
-                    </label>
+                            <input type="text" name="capacidadGarage" id="capacidadGarage" placeholder=" "
+                                class="form_input">
+                            <i class='bx bxs-car'></i>
+                            <span class="input_text">Ingrese capacidad(plazas) del negocio / garage</span>
+                        </label>
                     </div>
                 </div>
             </div>
