@@ -122,7 +122,7 @@ btn_editarUsuario.addEventListener('click', (e) => {
         .then((respuesta) => {
             respuesta.json();
         })
-        .then((data) => { console.log(data) })
+        .then((data) => { console.log('datos desde el backend: ',data) })
         .catch((e) => { console.log(e) });
 
 })

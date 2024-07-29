@@ -18,7 +18,7 @@ document.querySelector('.menu-btn').addEventListener('click', function () {
 
 
 
-/*------------------FORMULARIO DE LOGIN-------------------*/
+/*------------------FORMULARIO DE LOGIN funcional-------------------
 function prevenirCarga(e) {
     e.preventDefault();
 
@@ -64,7 +64,42 @@ function prevenirCarga(e) {
         return err
     }
 }
+    --------------------------------------------------------------------------*/
 
+
+
+
+
+
+
+//falta crear nuevamente la formula
 
 let miForm = document.getElementById('formulario');
-miForm.addEventListener("submit", prevenirCarga);
+miForm.addEventListener("submit", async (e) =>{
+    e.preventDefault();
+    console.group('registro de formulario');
+    console.log(e);
+    console.groupEnd();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
