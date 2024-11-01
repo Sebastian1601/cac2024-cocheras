@@ -1,6 +1,7 @@
 {
   "name": "cac2024_cochera_node",
   "version": "1.0.0",
+  "type":"module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,8 +17,8 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.19.2",
-    "mysql2": "^3.10.2"
+    "bcryptjs": "2.4.3",
+    "express": "4.19.2",
+    "mysql2": "3.10.2"
   }
 }

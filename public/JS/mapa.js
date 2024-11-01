@@ -5,7 +5,7 @@ let marcadores = [];
 let mapaActual;
 
 let iconMarker = L.icon({
-    iconUrl: '/public/Media/img/img_icono_mapa_32.png',
+    iconUrl: '/Media/img/img_icono_mapa_32.png',
     iconSize: [32, 42],
     iconAnchor: [16, 40]
 })

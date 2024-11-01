@@ -1,0 +1,21 @@
+### prbando las rutas
+GET http://127.0.0.1:3005/
+
+
+### get users
+GET http://localhost:3005/user/login
+
+### register
+POST http://localhost:3005/user/register
+Content-Type: application/json
+
+{
+    "nombre":"David",
+    "apellido":"Giordano",
+    "dni":92869075,
+    "email":"davidseba.giordano@gmail.com",
+    "localidad":"Tortuguitas"
+}
+
+
+
